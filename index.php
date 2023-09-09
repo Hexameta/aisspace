@@ -9,7 +9,6 @@ $techarray = array();
 while ($row = mysqli_fetch_assoc($result)) {
     $techarray[$row["title"]] = $row["content"];
 }
-echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
 ?>
 
 <head>
@@ -142,17 +141,20 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
             ?>
             <div class="mb-2 mt-60 pt-2">
                 <h2 class="text-center text-dark">Events</h2>
-                <div class="logo-carousel-wrap py-30">
+                <div class="logo-carousel-wrap py-20">
                     <?php
                     $i = 0;
                     while ($row = mysqli_fetch_array($result)) {
-                        $img= $row['n_image'];
+                        $img = $row['n_image'];
                         $i++;
                         ?>
-                        <div class="card shadow-sm p-1 m-1 br-20 wow fadeInUp delay-0-<?php echo $i ?>s" data-toggle="modal"
-                            onclick='setModalData("Event","assets/images/news/<?php echo $row["n_image"] ?>","<?php echo $row["n_title"] ?>","<?php echo $row["n_date"] ?>","<?php echo $row["n_desc"] ?>")' data-target="#edit">
+                        <div role="button"
+                            class="card cursor-pointer shadow-sm p-1 m-1 br-10 wow fadeInUp delay-0-<?php echo $i ?>s"
+                            data-toggle="modal" style="width:300px"
+                            onclick='setModalData("Event","assets/images/news/<?php echo $row["n_image"] ?>","<?php echo $row["n_title"] ?>","<?php echo $row["n_date"] ?>","<?php echo $row["n_desc"] ?>")'
+                            data-target="#edit">
                             <img src="assets/images/news/<?php echo $row["n_image"] ?>" class="card-img-top" alt="..."
-                                height="120px" style="object-fit: cover;">
+                                height="120px" width="300px" style="object-fit: cover;">
                             <div class="card-body text-left">
                                 <span class=" badge rounded-pill bg-primary text-light mb-2 p-2">
                                     <i class="fas fa-calendar-alt text-light me-2" aria-hidden="true"></i>
@@ -162,10 +164,10 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                                     <?php echo date("M", strtotime($row["n_date"])) ?>
                                     <?php echo date("Y", strtotime($row["n_date"])) ?>
                                 </span>
-                                <h4 class="card-title mb-0">
+                                <h4 class="card-title mb-0 text-nowrap">
                                     <?php echo $row["n_title"] ?>
                                 </h4>
-                                <p class="card-text text-muted">
+                                <p class="text-muted" style="font-size:14px">
                                     <?php echo substr($row["n_desc"], 0, 20) . "........."; ?>
                                 </p>
 
@@ -192,7 +194,8 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                     <div class="section-title mb-35">
                         <span class="sub-title">Al Ameen College, Edathala</span>
                         <h2>Fueling innovation and growth through expert incubation and startup support.</h2>
-                        <p>Entrepreneurship is essential for economic growth and poverty reduction, as it creates
+                        <p class="text-justify">Entrepreneurship is essential for economic growth and poverty reduction,
+                            as it creates
                             jobs and improves products. Al Ameen College, Edathala, an accredited Arts and Science
                             College, has recognized the importance of entrepreneurship and innovation in today's
                             world. We established an Entrepreneurship Development Cell to enhance student
@@ -203,16 +206,18 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                     </div>
                 </div>
                 <div class="col-lg-5 wow fadeInRight delay-0-2s">
-                    <p>AIS SPACE is an incubation space that fosters entrepreneurship and facilitates the growth
+                    <p class="text-justify">AIS SPACE is an incubation space that fosters entrepreneurship and
+                        facilitates the growth
                         of startups. Our mission is to provide end-to-end support for technology-based ventures,
                         from ideation to commercialization.</p>
-                    <p>We are passionate about supporting bold and innovative entrepreneurs who are developing
+                    <p class="text-justify">We are passionate about supporting bold and innovative entrepreneurs who are
+                        developing
                         game-changing solutions. Our focus is on the early stages of a startup's journey, where
                         access to resources and guidance is limited, but the need for support is critical. Through a
                         comprehensive suite of incubation, acceleration, funding, and mentorship programs, we
                         provide ambitious entrepreneurs with everything they need to achieve exceptional results.
                     </p>
-                    <p>
+                    <p class="text-justify">
                         We associate with government agencies and other NGOs such as by DIC, KIED, Start-up Mission,
                         BIC MG University, YIP and IIM Kozhikode.
                     </p>
@@ -244,9 +249,8 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                     <?php
                     while ($row = mysqli_fetch_array($result)) {
                         ?>
-                        <div class="logo-item">
-                            <a href="<?php echo $row["comp_website"] ?>" target="_blank"><img
-                                    src="assets/images/companies/<?php echo $row["comp_logo"] ?>" alt="Client Logo"></a>
+                        <div class="logo-item" data-toggle="modal" data-target="#company" onclick='setModalCData("Company","assets/images/companies/<?php echo $row["comp_logo"] ?>","<?php echo $row["comp_name"] ?>","<?php echo $row["comp_website"] ?>","<?php echo $row["comp_details"] ?>")'>
+                            <img src="assets/images/companies/<?php echo $row["comp_logo"] ?>" alt="Client Logo">
                         </div>
                         <?php
                     }
@@ -317,15 +321,19 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                         <div class="section-title mb-35">
                             <h2>Objectives</h2>
                         </div>
-                        <p>The objectives of the Incubation Centre are as follows:</p>
+                        <p class="font-weight-bold">The objectives of the Incubation Centre are as follows:</p>
                         <ul class="list-style-three mt-15">
-                            <li>To promote, encourage, and sustain activities and programmes contributing to
+                            <li class="text-justify">To promote, encourage, and sustain activities and programmes
+                                contributing to
                                 innovation, incubation & entrepreneurship education and development.</li>
-                            <li>To provide financial and technical support to aspiring both faculty and students
+                            <li class="text-justify">To provide financial and technical support to aspiring both faculty
+                                and students
                                 innovators and entrepreneurs in the campus.</li>
-                            <li>To facilitate in market augmentation for the products developed by the start-ups
+                            <li class="text-justify">To facilitate in market augmentation for the products developed by
+                                the start-ups
                                 in the campus.</li>
-                            <li>To ensure the successful surge of the incubated start-ups and thereby to provide
+                            <li class="text-justify">To ensure the successful surge of the incubated start-ups and
+                                thereby to provide
                                 employment opportunities to the other students in the campus.</li>
                         </ul>
                     </div>
@@ -389,22 +397,24 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                     while ($row = mysqli_fetch_array($result)) {
                         $i = +2;
                         ?>
-                        <div class="col-xl-4 col-md-6" data-toggle="modal"
-                            onclick='setModalData("News","assets/images/news/<?php echo $row["n_image"]?>","<?php echo $row["n_title"] ?>","<?php echo $row["n_date"] ?>","<?php echo $row["n_desc"] ?>")' data-target="#edit">
+                        <div role="button" class="col-xl-4 col-md-6" data-toggle="modal"
+                            onclick='setModalData("News","assets/images/news/<?php echo $row["n_image"] ?>","<?php echo $row["n_title"] ?>","<?php echo $row["n_date"] ?>","<?php echo $row["n_desc"] ?>")'
+                            data-target="#edit">
                             <div class="news-item style-two wow fadeInUp delay-0-<?php echo $i ?>s">
                                 <div class="image">
                                     <img src="assets/images/news/<?php echo $row["n_image"] ?>" alt="News" height="200px"
                                         style="object-fit: cover;">
                                 </div>
                                 <div class="news-content p ">
-                                    <div class="news-author">
-                                        <!-- <img src="assets/images/news/news-author-1.jpg" alt="Authro"> -->
-                                    </div>
+                                    <!-- <div class="news-author">
+                                         <img src="assets/images/news/news-author-1.jpg" alt="Authro">
+                                    </div> -->
                                     <ul class="post-meta-item m-0">
                                         <li class="pt-20 pb-0">
                                             <i class="fas fa-calendar-alt"></i>
-                                            <a href="#news" rel="bookmark">
-                                                <?php echo date("d", strtotime($row["n_date"])) ?><sup>
+                                            <a>
+                                                <?php echo date("d", strtotime($row["n_date"])) ?>
+                                                <sup>
                                                     <?php echo dateSup(date("d", strtotime($row["n_date"]))) ?>
                                                 </sup>
                                                 <?php echo date("M", strtotime($row["n_date"])) ?>
@@ -413,12 +423,11 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                                             <!-- <b>By <a href="#">Admin</a></b> -->
                                         </li>
                                     </ul>
-                                    <h4><a href="#news">
-                                            <?php echo $row["n_title"] ?>
-                                        </a>
+                                    <h4>
+                                        <?php echo $row["n_title"] ?>
                                     </h4>
-                                    <p><a href="#news">
-                                            <?php echo substr($row["n_desc"], 0, 15) . "........" ?>
+                                    <p>
+                                        <?php echo substr($row["n_desc"], 0, 15) . "........" ?>
                                     </p>
                                 </div>
                             </div>
@@ -511,7 +520,7 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
     </div>
     <!--End pagewrapper-->
 
-    <!--Modal-->
+    <!--Modal News Event-->
     <div class="modal fade" id="edit" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -531,7 +540,39 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
                                 <i class="fas fa-calendar-alt text-dark me-4"></i>
                                 <h6 class="px-2 text-muted" id="modal-date"></h6>
                             </div>
-                            <p class="card-text" id="modal-desc"></p>
+                            <p class="card-text text-justify" id="modal-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal company-->
+
+    <div class="modal fade" id="company" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h4 class="modal-title" id="modal-cheading">heading</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 align-items-center justify-content-center c-img-modal">
+                            <a id="modal-cURL" href="https://hexameta.in" target="_blank">
+                                <img class="card-img h-100" id="modal-cimg" src="" alt="Vans">
+                                <p id="modal-cwebsite"></p>
+                            </a>
+                            </div>
+                            <div class="card-body col-md-6 col-sm-12 ">
+                                <h4 class="card-title" id="modal-ctitle"></h4>
+                                <p class="card-text text-justify" id="modal-cdesc"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -544,11 +585,29 @@ echo "<script>console.log(" . $techarray["ph1"] . ")</script>";
 
     <script>
         function setModalData(heading, img, title, date, desc) {
+            let objectDate = new Date(date);
+            let day = objectDate.getDate();
+            let month = objectDate.getMonth();
+            let year = objectDate.getFullYear();
+            day = day < 10 ? '0' + day : day;
+            month = month < 10 ? '0' + (month + 1) : (month + 1);
+
             $("#modal-heading").html(heading);
             $("#modal-title").html(title);
-            $("#modal-img").attr("src",img);
-            $("#modal-date").html(date);
+            $("#modal-img").attr("src", img);
+            $("#modal-date").html(day + "-" + (month) + "-" + year);
             $("#modal-desc").html(desc);
+        }
+
+
+        function setModalCData(heading, img, title, website, desc) {
+
+            $("#modal-cheading").html(heading);
+            $("#modal-ctitle").html(title);
+            $("#modal-cURL").attr("href", website);
+            $("#modal-cwebsite").html(website);
+            $("#modal-cimg").attr("src", img);
+            $("#modal-cdesc").html(desc);
         }
     </script>
     <!--====== Jquery ======-->
