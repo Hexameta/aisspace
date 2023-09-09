@@ -10,7 +10,7 @@ include 'includes/conn.php'
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        AISSPACE - Main Page Admin
+        AISSPACE - Upload Page Admin
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -127,7 +127,7 @@ include 'includes/conn.php'
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/main-page.php">
+                    <a class="nav-link" href="../admin/main-page.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -156,7 +156,33 @@ include 'includes/conn.php'
                         <span class="nav-link-text ms-1">Main Page</span>
                     </a>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link active" href="../admin/uploads.php">
+                        <div
+                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>credit-card</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"
+                                        fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(453.000000, 454.000000)">
+                                                <path class="color-background opacity-6"
+                                                    d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z">
+                                                </path>
+                                                <path class="color-background"
+                                                    d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Uploads</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
@@ -169,9 +195,9 @@ include 'includes/conn.php'
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Admin</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Main Page</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Uploads</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Main Page</h6>
+                    <h6 class="font-weight-bolder mb-0">Uploads</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -194,225 +220,108 @@ include 'includes/conn.php'
                 </div>
             </div>
         </nav>
-        <!-- End Navbar -->
-        <div class="container-fluid">
-            <div class="page-header min-height-100 border-radius-xl mt-4"
-                style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
-                <span class="mask bg-gradient-primary opacity-6"></span>
-            </div>
-            <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
-                <div class="row gx-4">
-                    <div class="col-auto">
-                        <div class="avatar avatar-xl position-relative">
-                            <img src="../../assets/images/logos/square-logo-black .png" alt="profile_image"
-                                class="w-100 border-radius-lg shadow-sm">
-                        </div>
-                    </div>
-                    <div class="col-10 my-auto d-flex justify-content-between">
-                        <div class="h-100 col-8">
-                            <h5 class="mb-1">
-                                AISSPACE
-                            </h5>
-                            <p class="mb-0 font-weight-bold text-sm">
-                                Ameenain Incubation Startup Space
-                            </p>
-                        </div>
-                        <div class="col-2">
-                            <a class="btn btn-primary btn-sm mb-0 justify-content-end p-3" data-toggle="modal"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"
-                                data-target="#data"><i class="fas fa-pencil-alt me-2"></i> Edit Profile</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="alert alert-success alert-dismissible fade w-80 m-0 p-2 ps-4 ms-8" role="alert"
+            id="copySuccessAlert">
+            File link copied to clipboard.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div class="card card-body mx-md-4 mt-3">
+        <!-- End Navbar -->
+        <div class="card card-body mx-md-4 mt-0 shadow-blur mx-4">
             <div class="col-auto my-auto">
                 <div class="h-100">
-                    <div class="card-header p-0">
+                    <div class="card-header pb-0 p-3">
                         <div class="row">
-                            <div class="col-md-8 align-items-center">
-                                <h6 class="mb-0">Profile Information</h6>
+                            <div class="col-6 d-flex align-items-center">
+                                <h6 class="mb-0"><strong>Uploaded Files</strong></h6>
                             </div>
-                            <div class="col-md-4 text-end">
-                                <a class="btn btn-link text-dark px-3 mb-0" data-toggle="modal" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Edit Main Page" onclick="getData()"
-                                    data-target="#edit"><i class="fas fa-pencil-alt me-2"></i> Edit</a>
+                            <div class="col-6 text-end">
+                                <button class="btn btn-outline-primary btn-sm mb-0" data-toggle="modal"
+                                    data-target="#form">Upload New</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-xl-4">
-                <div class="card card-plain h-100">
-                    <div class="card-body p-0 ps-2">
+                    <div class="card-body p-3 pb-0">
                         <ul class="list-group">
-                            <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">
-                                    Name:</strong> &nbsp; AISSPACE
-                            </li>
+                            <?php
+                            $uploadDirectory = '../../../aisspace/backend/uploads';
+                            $files = scandir($uploadDirectory);
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="email"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong
-                                    class="text-dark">Location:</strong> &nbsp;Al Ameen College, Edathala</li>
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                    Mobile Number:</strong> &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="ph1"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
+                            // Create an array to store file information
+                            $fileInfo = [];
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Alternate Mobile
-                                    Number:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="ph2"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
+                            foreach ($files as $file) {
+                                if ($file != '.' && $file != '..') {
+                                    $filePath = $uploadDirectory . '/' . $file;
+                                    $fileDate = filemtime($filePath); // Get modification timestamp
+                                    $fileInfo[] = [
+                                        'name' => $file,
+                                        'date' => $fileDate
+                                    ];
+                                }
+                            }
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">No. of Startups
-                                    Incubated</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c1"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
+                            // Sort the files based on the modification timestamp in descending order
+                            usort($fileInfo, function ($a, $b) {
+                                return $b['date'] - $a['date'];
+                            });
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">No. of Startups
-                                    that have <br> successfully launched:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c2"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
+                            foreach ($fileInfo as $fileData) {
+                                $fileDateFormatted = date("d F, Y", $fileData['date']);
                                 ?>
-                            </li>
+                                <li
+                                    class="list-group-item border-0 ps-0 mb-2 border-radius-lg">
+                                    <div class="row d-flex align-items-center justify-content-between" >
+                                        <div class="col-12 col-md-8 col-lg-9">
+                                            <h6 class="mb-1 text-dark font-weight-bold text-xs">
+                                                <?= $fileData['name'] ?>
+                                            </h6>
+                                            <span class="text-xs">
+                                                <?= $fileDateFormatted ?>
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-3 text-xs ">
+                                            <button class="btn btn-link text-success text-xs mb-0 px-0"
+                                                onclick="copyFileLink('<?= $uploadDirectory ?>/<?= $fileData['name'] ?>')">
+                                                <i class="fas fa-copy text-sm me-1"></i> Copy Link
+                                            </button>
+                                            <button class="btn btn-link text-danger text-xs mb-0 px-0 ms-4"
+                                                onclick="confirmDelete('<?= $fileData['name'] ?>')">
+                                                <i class="fas fa-trash-alt text-sm me-1"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Funds
-                                    Generated:</strong>
-                                &nbsp;
+                                </li>
                                 <?php
-                                $q = 'SELECT * from main_page where title="c3"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Jobs
-                                    Generated:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c4"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="edit" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+
+        <div class="modal fade" id="form" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header border-bottom-0">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Main Page Details</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Upload new file</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
-                    <form action="includes/editmain.php" onsubmit="return editValidate()" method="POST">
-
-                        <div class="modal-body py-0 my-0">
-                        <div id="errormsg2">
-                            </div>
-                            <input type="hidden" name="id" id="id">
-                            <div class="form-group py-0 my-1">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control p-1" id="email" name="email"
-                                    placeholder="Enter Email">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="ph1">Phone Number</label>
-                                <input type="text" class="form-control p-1" id="ph1" name="ph1"
-                                    placeholder="Enter Phone Number">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="ph2">Alternate Mobile Number</label>
-                                <input type="text" class="form-control p-1" id="ph2" name="ph2"
-                                    placeholder="Enter lternate Mobile Number">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c1">No. of Startups Incubated</label>
-                                <input type="text" class="form-control p-1" id="c1" name="c1" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c2">No. of Startups that have successfully launched</label>
-                                <input type="text" class="form-control p-1" id="c2" name="c2" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c3">Funds Generated</label>
-                                <input type="text" class="form-control p-1" id="c3" name="c3" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c4">Jobs Generated</label>
-                                <input type="text" class="form-control p-2" id="c4" name="c4" placeholder="Enter data">
-                            </div>
-                        </div>
-                        <div class="p-0 m-0 modal-footer border-top-0 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="data" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-bottom-0">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <form action="includes/editlogin.php" onsubmit="return verfiyPass()" method="POST">
+                    <form action="includes/uploads.php" onsubmit="return verfiyUpload()" enctype="multipart/form-data"
+                        method="POST">
 
                         <div class="modal-body py-0 my-0">
                             <div id="errormsg2">
                             </div>
                             <div class="form-group py-0 my-1">
-                                <label for="pass1">Enter New Password</label>
-                                <input type="password" class="form-control p-1" id="pass1" name="pass1"
-                                    placeholder="Enter New Password">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="pass2">Confirm New Password</label>
-                                <input type="password" class="form-control p-1" id="pass2" name="pass2"
-                                    placeholder="Confirm New Password">
+                                <label for="upl">Select file to upload</label>
+                                <input type="file" class="form-control p-1" id="upl" name="upl">
                             </div>
 
                         </div>
@@ -444,65 +353,39 @@ include 'includes/conn.php'
     </div>
 
     <script>
-        function getData() {
-            $.ajax({
-                url: "includes/getmain.php",
-                type: "POST",
-                success: function (data) {
-                    var data = JSON.parse(data);
-                    $('#id').val(data.id);
-                    $('#email').val(data.email);
-                    $('#ph1').val(data.ph1);
-                    $('#ph2').val(data.ph2);
-                    $('#c1').val(data.c1);
-                    $('#c2').val(data.c2);
-                    $('#c3').val(data.c3);
-                    $('#c4').val(data.c4);
-                    console.log(data);
-                }
-            });
+        function copyFileLink(filePath) {
+            const el = document.createElement('textarea');
+            el.value = window.location.origin + '/' + filePath;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            // Show the Bootstrap alert
+            const alert = document.getElementById('copySuccessAlert');
+            alert.classList.add('show');
+
+            // Hide the Bootstrap alert after 2 seconds (adjust the delay as needed)
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 2000);
         }
 
-        function verfiyPass() {
-            var pass1 = $('#pass1').val();
-            var pass2 = $('#pass2').val();
-            // console.log(pass1);
-            // console.log(pass2);
-            if (pass1 != pass2) {
-                document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Passwords don't match</span></div>"
+        function verfiyUpload() {
+            var file = document.getElementById("upl").value;
+            if (file == "") {
+                document.getElementById("errormsg2").innerHTML = "<div class='alert text-white alert-danger alert-dismissible fade show' role='alert'>Please select a file to upload.</div>";
                 return false;
-            }
-            else{
+            } else {
                 return true;
             }
         }
 
-        function editValidate() {
-            var email = $('#email').val();
-            var ph1 = $('#ph1').val();
-            var ph2 = $('#ph2').val();
-            var c1 = $('#c1').val();
-            var c2 = $('#c2').val();
-            var c3 = $('#c3').val();
-            var c4 = $('#c4').val();
-
-            if (email == "" || ph1 == "" || ph2 == "" || c1 == "" || c2 == "" || c3 == "" || c4 == "") {
-                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
-                return false;
-            }
-            else if(ph1.length != 10 || ph2.length != 10){
-                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid phone number</span></div>"     
-                return false;
-            }
-            else if(email.indexOf('@') == -1 && email.indexOf('.') == -1 && email.indexOf(' ') == -1){
-                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid email</span></div>"     
-                return false;
-            }
-            else {
-                return true;
+        function confirmDelete(fileName) {
+            if (confirm("Are you sure you want to DELETE this file?")) {
+                window.location.href = "includes/deluploads.php?file=" + encodeURIComponent(fileName);
             }
         }
-
 
     </script>
     <!--   Core JS Files   -->

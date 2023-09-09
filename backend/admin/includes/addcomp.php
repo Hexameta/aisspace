@@ -1,14 +1,14 @@
 <?php
 include 'conn.php';
-$name = $_POST['name'];
-$website = $_POST['website'];
-$description = $_POST['description'];
+$name = $mysqli -> real_escape_string ($_POST['name']);
+$website = $mysqli -> real_escape_string ($_POST['website']);
+$description = $mysqli -> real_escape_string ($_POST['description']);
 
 $query = "INSERT INTO companies (comp_name, comp_website, comp_details) VALUES ('$name', '$website', '$description')";
 
 if ($result = mysqli_query($conn, $query)) {
 
-    if (($_FILES['image']['name'] != "")) {
+        if (($_FILES['image']['name'] != "")) {
         // Get the uploaded file's name and extension
         $file_name = $_FILES['image']['name'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);

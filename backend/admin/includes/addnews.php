@@ -1,8 +1,8 @@
 <?php
 include 'conn.php';
-$title = $_POST['title'];
+$title = $mysqli->real_escape_string($_POST['title']);
 $date = $_POST['date'];
-$description = $_POST['description'];
+$description = $mysqli->real_escape_string($_POST['description']);
 $type = $_POST['ne'];
 
 $query = "INSERT INTO newsfeed(n_title, n_date, n_desc, news_event, n_status) VALUES ('$title', '$date', '$description', $type, 1)";
