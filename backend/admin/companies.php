@@ -1,5 +1,6 @@
 <?php
 include 'includes/conn.php';
+include 'includes/sessionvalidate.php';
 ?>
 
 <!DOCTYPE html>
@@ -198,7 +199,7 @@ include 'includes/conn.php';
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="">Logout</a>
+              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="./includes/logout.php">Logout</a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
