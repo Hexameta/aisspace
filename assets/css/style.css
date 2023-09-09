@@ -6262,7 +6262,7 @@ h1, h2, h3, h4, h5, h6, .success-item .count-text, .pricing-header .price {
     position: absolute;
     width: 130px;
     height: 100px;
-    background: url(../images/about/about-bg-dots.png) no-repeat; }
+ }
   .about-two-image img,
   .about-three-image img {
     border-radius: 220px 220px 0 0; }
@@ -12491,3 +12491,8 @@ blockquote {
 .footer-ten .list-style-three li:before {
   margin-top: 1px;
   color: #454545; }
+
+
+  .events{
+    position: absolute;
+  }

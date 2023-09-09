@@ -1,3 +1,8 @@
+<?php
+include 'includes/conn.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,6 +99,33 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link  " href="../admin/events.php">
+                        <div
+                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>document</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF"
+                                        fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(154.000000, 300.000000)">
+                                                <path class="color-background opacity-6"
+                                                    d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z">
+                                                </path>
+                                                <path class="color-background"
+                                                    d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Events Feed</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link  " href="../admin/main-page.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -141,16 +173,19 @@
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search"
-                                    aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Type here...">
-                        </div>
+
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                                <i class="fa fa-user me-sm-1"></i>
+                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="">Logout</a>
+                        </li>
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
                             </a>
                         </li>
                     </ul>
@@ -164,73 +199,109 @@
                     <div class="d-flex bg-gradient-primary text justify-content-between border-radius-lg pt-3 p-3">
                         <h6 class="text-white font-weight-bolder text-uppercase pt-2 ps-3">News Feed</h6>
                     </div>
-                    <div class="card-body p-3">
-                        <div class="row">
-                            
-                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card h-100 card-plain border">
-                                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                                        <a type="button" title="Add News Item" data-toggle="modal" data-target="#form">
-                                            <i class="fa fa-plus text-secondary mb-3"  ></i>
-                                            <h5 class=" text-secondary"> Add News Item </h5>
-                                        </a>
-                                    </div>
+
+                    <div class="card-body bg-gray-300 p-3">
+                        <div class="row mb-xl-0 mb-4">
+                            <div class="card bg-gray-100 card-blog card-plain col-md-2 col-sm-12 ms-md-2 mb-2">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <a type="button" title="Add News Item" data-toggle="modal" data-target="#form">
+                                        <i class="fa fa-plus text-secondary mb-3"></i>
+                                        <h5 class=" text-secondary"> Add News Item </h5>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                                <div class="card card-blog card-plain">
+                            <?php
+                            $sql = "SELECT * FROM newsfeed WHERE news_event = 1 ORDER BY id DESC";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                                <div
+                                    class="card bg-gray-100 card-blog card-plain col-md-3 col-sm-12 ms-md-2 mb-2 p-md-2 p-1">
                                     <div class="position-relative">
-                                        <a class="d-block shadow-xl border-radius-xl">
-                                            <img src="../../assets/images/news/news1.png" alt="img-blur-shadow"
-                                                class="img-fluid shadow border-radius-xl" data-toggle="modal"
-                                                data-target="#view">
+                                        <a class="d-block border-radius-xl">
+                                            <img src="../../assets/images/news/<?php echo $row["n_image"] ?>"
+                                                alt="img-blur-shadow" class="rounded mx-auto d-block border-radius-xl"
+                                                height="150px" width="100%" style="object-fit:contain ">
                                         </a>
                                     </div>
                                     <div class="card-body px-1 pb-0">
                                         <div class="d-flex">
                                             <i class="fas fa-calendar-alt text-dark me-2" aria-hidden="true"></i>
-                                            <p class="text-gradient text-dark mb-2 text-sm">12/10/2021</p>
+                                            <p class="text-dark mb-2 text-sm">
+                                                <?php echo date("d", strtotime($row["n_date"])) ?><sup>
+                                                    <?php echo dateSup(date("d", strtotime($row["n_date"]))) ?>
+                                                </sup>
+                                                <?php echo date("M", strtotime($row["n_date"])) ?>
+                                                <?php echo date("Y", strtotime($row["n_date"])) ?>
+                                            </p>
                                         </div>
-                                            <h4 class="text-lg font-weight-bolder">
-                                                Entrepreneurial Exibition Stalls - Part of Incubation Inaugration
-                                            </h4>
-                                        <p class="text-sm mb-4">
-                                            Hexameta Technologies is a software development company that
-                                            provides end-to-end development service for web and mobile
-                                            development. We work on a wide range of technologies ranging from
-                                            open source to proprietary and custom built solutions.
+                                        <h4 class="text-lg font-weight-bolder">
+                                            <?php echo $row["n_title"] ?>
+                                        </h4>
+                                        <p class="text-sm mb-3">
+                                            <?php echo $row["n_desc"] ?>
                                         </p>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <button type="button" title="Delete this News" class="btn btn-outline-primary btn-sm mb-0">Delete
-                                                News</button>
-                                            <buttone type="button" title="Edit this News" class="btn btn-primary btn-sm mb-0"
-                                                data-toggle="modal" data-target="#edit">Edit News</button>
+                                        <div class="row align-items-center justify-content-between">
+
+                                            <a class="col-6 m-0"
+                                                href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&ne=1">
+                                                <button type="button" title="Delete this News"
+                                                    class="btn btn-outline-primary w-100 m-0 btn-sm mb-0">Delete</button>
+                                            </a>
+                                            <div class="col-6 m-0">
+                                                <button type="button" title="Edit this News"
+                                                    class="btn w-100 btn-primary btn-sm mb-0"
+                                                    onclick="getData(<?php echo $row['id']; ?>)" data-toggle="modal"
+                                                    data-target="#edit">
+                                                    Edit</button>
+                                            </div>
+
+
+
+                                            <a class="col-12" href="includes/status.php?id=<?php echo $row["id"] ?>">
+                                                <button type="button" title="Status" class="btn w-100 btn-transparent <?php
+                                                if ($row["n_status"] == 1) {
+                                                    echo "btn-success";
+                                                } else {
+                                                    echo "btn-danger";
+                                                }
+                                                ?>   btn-sm m-1 mb-0">
+                                                    <?php
+                                                    if ($row["n_status"] == 1) {
+                                                        echo "Active";
+                                                    } else {
+                                                        echo "Inactive";
+                                                    }
+                                                    ?>
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer pt-3  ">
+                    <div class="container-fluid">
+                        <div class="row align-items-center justify-content-lg-between">
+                            <div class="col-lg-6 mb-lg-0 mb-4">
+                                <div class="copyright text-center text-sm text-muted text-lg-start">
+                                    ©
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>,
+                                    made with <i class="fa fa-heart"></i> by
+                                    <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
+                                        Technologies</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </footer>
             </div>
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
-                                    Technologies</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </main>
 
     <!-- Add Company Modal -->
@@ -245,14 +316,14 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="../includes/addnews.php" method="POST" enctype="multipart/form-data"
+                <form action="includes/addnews.php" method="POST" enctype="multipart/form-data"
                     onsubmit="return formValidate()">
 
                     <div class="modal-body">
                         <div id="errormsg">
 
                         </div>
-
+                        <input type="hidden" name="ne" value="1">
                         <div class="form-group">
                             <label for="text1">Title</label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
@@ -294,13 +365,14 @@
                     </button>
                 </div>
 
-                <form action="../includes/editnews.php" method="POST" enctype="multipart/form-data"
+                <form action="includes/editnews.php" method="POST" enctype="multipart/form-data"
                     onsubmit="return editValidate()">
 
                     <div class="modal-body">
                         <div id="errormsg2">
                         </div>
-                        <input type="hidden" name="id" id="cid">
+                        <input type="hidden" name="id" id="nid">
+                        <input type="hidden" name="ne" value="1">
                         <input type="hidden" name="imageName" id="imageName">
                         <div class="form-group">
                             <label for="text1">Title</label>
@@ -330,6 +402,101 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function getData(id) {
+            $.ajax({
+                url: "includes/getnews.php",
+                type: "GET",
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    var data = JSON.parse(data);
+                    $("#nid").val(data[0].id);
+                    $("#etitle").val(data[0].n_title);
+                    $("#edate").val(data[0].n_date);
+                    $("#edesc").val(data[0].n_desc);
+                    $("#imageName").val(data[0].n_image);
+                }
+            });
+        }
+
+        const fileInput = document.getElementById('image');
+
+        const imgValidate = () => {
+            {
+                var filePath = fileInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    fileInput.value = '';
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+                    return false;
+                }
+                if (fileInput.files[0].size > 500000) {
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+                    fileInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg').innerHTML = ""
+            }
+        }
+        fileInput.onchange = imgValidate;
+
+        const editInput = document.getElementById('eimage');
+        const editimgValidate = () => {
+            {
+                var filePath = editInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    editInput.value = '';
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+                    return false;
+                }
+                if (editInput.files[0].size > 500000) {
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+                    editInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg2').innerHTML = ""
+                return true;
+
+            }
+        }
+        editInput.onchange = editimgValidate;
+
+        const formValidate = () => {
+            var title = document.getElementById('title').value;
+            var date = document.getElementById('date').value;
+            var desc = document.getElementById('desc').value;
+            var image = document.getElementById('image').value;
+            if (title == "" || date == "" || desc == "") {
+                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
+                return false;
+            } else if (image == "") {
+                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please upload an image</span></div>"
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        const editValidate = () => {
+            var title = document.getElementById('etitle').value;
+            var date = document.getElementById('edate').value;
+            var desc = document.getElementById('edesc').value;
+            var image = document.getElementById('eimage').value;
+            if (title == "" || date == "" || desc == "") {
+                document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    </script>
 
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>

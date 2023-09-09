@@ -1,6 +1,7 @@
 <?php
-include 'includes/conn.php'
-    ?>
+include 'includes/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@ include 'includes/conn.php'
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        AISSPACE - Main Page Admin
+        AISSPACE - Events Admin
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -21,13 +22,10 @@ include 'includes/conn.php'
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
-    <!-- Nepcha Analytics (nepcha.com) -->
-    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100">
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
         id="sidenav-main">
         <div class="sidenav-header">
@@ -100,7 +98,7 @@ include 'includes/conn.php'
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../admin/events.php">
+                    <a class="nav-link active" href="../admin/events.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
@@ -127,7 +125,7 @@ include 'includes/conn.php'
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../admin/main-page.php">
+                    <a class="nav-link  " href="../admin/main-page.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -159,7 +157,7 @@ include 'includes/conn.php'
             </ul>
         </div>
     </aside>
-    <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
             navbar-scroll="true">
@@ -168,9 +166,9 @@ include 'includes/conn.php'
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Admin</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Main Page</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Events Feed</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Main Page</h6>
+                    <h6 class="font-weight-bolder mb-0">Events Feed</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -194,316 +192,307 @@ include 'includes/conn.php'
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="container-fluid">
-            <div class="page-header min-height-100 border-radius-xl mt-4"
-                style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
-                <span class="mask bg-gradient-primary opacity-6"></span>
-            </div>
-            <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
-                <div class="row gx-4">
-                    <div class="col-auto">
-                        <div class="avatar avatar-xl position-relative">
-                            <img src="../../assets/images/logos/square-logo-black .png" alt="profile_image"
-                                class="w-100 border-radius-lg shadow-sm">
-                        </div>
+        <div class="container-fluid py-4">
+            <div class="col-12 mt-4">
+                <div class="card mb-4">
+                    <div class="d-flex bg-gradient-primary text justify-content-between border-radius-lg pt-3 p-3">
+                        <h6 class="text-white font-weight-bolder text-uppercase pt-2 ps-3">Events Feed</h6>
                     </div>
-                    <div class="col-10 my-auto d-flex justify-content-between">
-                        <div class="h-100 col-8">
-                            <h5 class="mb-1">
-                                AISSPACE
-                            </h5>
-                            <p class="mb-0 font-weight-bold text-sm">
-                                Ameenain Incubation Startup Space
-                            </p>
-                        </div>
-                        <div class="col-2">
-                            <a class="btn btn-primary btn-sm mb-0 justify-content-end p-3" data-toggle="modal"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"
-                                data-target="#data"><i class="fas fa-pencil-alt me-2"></i> Edit Profile</a>
+
+                    <div class="card-body bg-gray-300 p-3">
+                        <div class="row mb-xl-0 mb-4">
+                            <div class="card bg-gray-100 card-blog card-plain col-md-2 col-sm-12 ms-md-2 mb-2">
+                                <div class="card-body d-flex flex-column justify-content-center text-center">
+                                    <a type="button" title="Add News Item" data-toggle="modal" data-target="#form">
+                                        <i class="fa fa-plus text-secondary mb-3"></i>
+                                        <h5 class=" text-secondary"> Add Event Item </h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php
+                            $sql = "SELECT * FROM newsfeed WHERE news_event = 2 ORDER BY id DESC";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                                <div
+                                    class="card bg-gray-100 card-blog card-plain col-md-3 col-sm-12 ms-md-2 mb-2 p-md-2 p-1">
+                                    <div class="position-relative">
+                                        <a class="d-block border-radius-xl">
+                                            <img src="../../assets/images/news/<?php echo $row["n_image"] ?>"
+                                                alt="img-blur-shadow" class="rounded mx-auto d-block border-radius-xl"
+                                                height="150px" width="100%" style="object-fit:contain ">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <div class="d-flex">
+                                            <i class="fas fa-calendar-alt text-dark me-2" aria-hidden="true"></i>
+                                            <p class="text-dark mb-2 text-sm">
+                                                <?php echo date("d", strtotime($row["n_date"])) ?><sup>
+                                                    <?php echo dateSup(date("d", strtotime($row["n_date"]))) ?>
+                                                </sup>
+                                                <?php echo date("M", strtotime($row["n_date"])) ?>
+                                                <?php echo date("Y", strtotime($row["n_date"])) ?>
+                                            </p>
+                                        </div>
+                                        <h4 class="text-lg font-weight-bolder">
+                                            <?php echo $row["n_title"] ?>
+                                        </h4>
+                                        <p class="text-sm mb-3">
+                                            <?php echo $row["n_desc"] ?>
+                                        </p>
+                                        <div class="row align-items-center justify-content-between">
+                                        <a class="col-6 m-0" href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&ne=2">
+                                                <button type="button" title="Delete this Event"
+                                                    class="btn btn-outline-primary w-100 m-0 btn-sm mb-0">Delete</button>
+                                            </a>
+                                            <div class="col-6 m-0">
+                                            <button type="button" title="Edit this Event"
+                                                class="btn w-100 btn-primary btn-sm mb-0"
+                                                onclick="getData(<?php echo $row['id']; ?>)" data-toggle="modal"
+                                                data-target="#edit">
+                                                Edit
+                                            </button>
+                                            </div>
+                                            <a class="col-12" href="includes/status.php?id=<?php echo $row["id"] ?>">
+                                                <button type="button" title="Status" class="btn w-100 btn-transparent <?php
+                                                if ($row["n_status"] == 1) {
+                                                    echo "btn-success";
+                                                } else {
+                                                    echo "btn-danger";
+                                                }
+                                                ?>   btn-sm m-1 mb-0">
+                                                    <?php
+                                                    if ($row["n_status"] == 1) {
+                                                        echo "Active";
+                                                    } else {
+                                                        echo "Inactive";
+                                                    }
+                                                    ?>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
+                <footer class="footer pt-3  ">
+                    <div class="container-fluid">
+                        <div class="row align-items-center justify-content-lg-between">
+                            <div class="col-lg-6 mb-lg-0 mb-4">
+                                <div class="copyright text-center text-sm text-muted text-lg-start">
+                                    ©
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>,
+                                    made with <i class="fa fa-heart"></i> by
+                                    <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
+                                        Technologies</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </main>
+
+    <!-- Add Company Modal -->
+
+    <div class="modal fade" id="form" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="includes/addnews.php" method="POST" enctype="multipart/form-data"
+                    onsubmit="return formValidate()">
+
+                    <div class="modal-body">
+                        <div id="errormsg">
+
+                        </div>
+                        <input type="hidden" name="ne" value="2">
+                        <div class="form-group">
+                            <label for="text1">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="text2">Date</label>
+                            <input type="date" class="form-control" id="date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Description</label>
+                            <textarea class="form-control px-1" placeholder="Enter Description" name="description"
+                                id="desc" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file1">Add Poster</label>
+                            <input type="file" accept="image/png, image/jpeg," name="image" class="form-control"
+                                id="image">
+                        </div>
+                    </div>
+                    <div class=" modal-footer border-top-0 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
             </div>
         </div>
-        <div class="card card-body mx-md-4 mt-3">
-            <div class="col-auto my-auto">
-                <div class="h-100">
-                    <div class="card-header p-0">
-                        <div class="row">
-                            <div class="col-md-8 align-items-center">
-                                <h6 class="mb-0">Profile Information</h6>
-                            </div>
-                            <div class="col-md-4 text-end">
-                                <a class="btn btn-link text-dark px-3 mb-0" data-toggle="modal" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Edit Main Page" onclick="getData()"
-                                    data-target="#edit"><i class="fas fa-pencil-alt me-2"></i> Edit</a>
-                            </div>
-                        </div>
-                    </div>
+    </div>
+
+    <!-- Edit Company Modal -->
+
+    <div class="modal fade" id="edit" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="col-12 col-xl-4">
-                <div class="card card-plain h-100">
-                    <div class="card-body p-0 ps-2">
-                        <ul class="list-group">
-                            <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">
-                                    Name:</strong> &nbsp; AISSPACE
-                            </li>
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="email"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong
-                                    class="text-dark">Location:</strong> &nbsp;Al Ameen College, Edathala</li>
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">
-                                    Mobile Number:</strong> &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="ph1"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
+                <form action="includes/editnews.php" method="POST" enctype="multipart/form-data"
+                    onsubmit="return editValidate()">
 
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Alternate Mobile
-                                    Number:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="ph2"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">No. of Startups
-                                    Incubated</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c1"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">No. of Startups
-                                    that have <br> successfully launched:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c2"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Funds
-                                    Generated:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c3"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-
-                            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Jobs
-                                    Generated:</strong>
-                                &nbsp;
-                                <?php
-                                $q = 'SELECT * from main_page where title="c4"';
-                                $r = mysqli_query($conn, $q);
-                                $row = mysqli_fetch_array($r);
-                                echo $row['content'];
-                                ?>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="edit" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-bottom-0">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Main Page Details</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <form action="includes/editmain.php" onsubmit="return editValidate()" method="POST">
-
-                        <div class="modal-body py-0 my-0">
+                    <div class="modal-body">
                         <div id="errormsg2">
-                            </div>
-                            <input type="hidden" name="id" id="id">
-                            <div class="form-group py-0 my-1">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control p-1" id="email" name="email"
-                                    placeholder="Enter Email">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="ph1">Phone Number</label>
-                                <input type="text" class="form-control p-1" id="ph1" name="ph1"
-                                    placeholder="Enter Phone Number">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="ph2">Alternate Mobile Number</label>
-                                <input type="text" class="form-control p-1" id="ph2" name="ph2"
-                                    placeholder="Enter lternate Mobile Number">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c1">No. of Startups Incubated</label>
-                                <input type="text" class="form-control p-1" id="c1" name="c1" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c2">No. of Startups that have successfully launched</label>
-                                <input type="text" class="form-control p-1" id="c2" name="c2" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c3">Funds Generated</label>
-                                <input type="text" class="form-control p-1" id="c3" name="c3" placeholder="Enter data">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="c4">Jobs Generated</label>
-                                <input type="text" class="form-control p-2" id="c4" name="c4" placeholder="Enter data">
-                            </div>
                         </div>
-                        <div class="p-0 m-0 modal-footer border-top-0 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="hidden" name="id" id="nid">
+                        <input type="hidden" name="ne" value="2">
+                        <input type="hidden" name="imageName" id="imageName">
+                        <div class="form-group">
+                            <label for="text1">Title</label>
+                            <input type="text" class="form-control px-2" id="etitle" name="title"
+                                placeholder="Enter Name">
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="data" tabdashboard="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-bottom-0">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <form action="includes/editlogin.php" onsubmit="return verfiyPass()" method="POST">
-
-                        <div class="modal-body py-0 my-0">
-                            <div id="errormsg2">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="pass1">Enter New Password</label>
-                                <input type="password" class="form-control p-1" id="pass1" name="pass1"
-                                    placeholder="Enter New Password">
-                            </div>
-                            <div class="form-group py-0 my-1">
-                                <label for="pass2">Confirm New Password</label>
-                                <input type="password" class="form-control p-1" id="pass2" name="pass2"
-                                    placeholder="Confirm New Password">
-                            </div>
-
+                        <div class="form-group">
+                            <label for="text2">Date</label>
+                            <input type="date" class="form-control px-2" id="edate" name="date"
+                                placeholder="Enter Date">
                         </div>
-                        <div class="p-0 m-0 modal-footer border-top-0 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="desc">Description</label>
+                            <textarea class="form-control px-1" placeholder="Enter Description" name="description"
+                                id="edesc" cols="30" rows="5"></textarea>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <footer class="footer pt-3  ">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div class="copyright text-center text-sm text-muted text-lg-start">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>,
-                            made with <i class="fa fa-heart"></i> by
-                            <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
-                                Technologies</a>
+                        <div class="form-group">
+                            <label for="file1">Add Poster</label>
+                            <input type="file" accept="image/png, image/jpeg," name="image" class="form-control"
+                                id="eimage">
                         </div>
                     </div>
-                </div>
+                    <div class=" modal-footer border-top-0 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
-        </footer>
+        </div>
     </div>
 
     <script>
-        function getData() {
+        function getData(id) {
             $.ajax({
-                url: "includes/getmain.php",
-                type: "POST",
+                url: "includes/getnews.php",
+                type: "GET",
+                data: {
+                    id: id
+                },
                 success: function (data) {
                     var data = JSON.parse(data);
-                    $('#id').val(data.id);
-                    $('#email').val(data.email);
-                    $('#ph1').val(data.ph1);
-                    $('#ph2').val(data.ph2);
-                    $('#c1').val(data.c1);
-                    $('#c2').val(data.c2);
-                    $('#c3').val(data.c3);
-                    $('#c4').val(data.c4);
-                    console.log(data);
+                    $("#nid").val(data[0].id);
+                    $("#etitle").val(data[0].n_title);
+                    $("#edate").val(data[0].n_date);
+                    $("#edesc").val(data[0].n_desc);
+                    $("#imageName").val(data[0].n_image);
                 }
             });
         }
 
-        function verfiyPass() {
-            var pass1 = $('#pass1').val();
-            var pass2 = $('#pass2').val();
-            // console.log(pass1);
-            // console.log(pass2);
-            if (pass1 != pass2) {
-                document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Passwords don't match</span></div>"
-                return false;
-            }
-            else{
-                return true;
+        const fileInput = document.getElementById('image');
+
+        const imgValidate = () => {
+            {
+                var filePath = fileInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    fileInput.value = '';
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+                    return false;
+                }
+                if (fileInput.files[0].size > 500000) {
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+                    fileInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg').innerHTML = ""
             }
         }
+        fileInput.onchange = imgValidate;
 
-        function editValidate() {
-            var email = $('#email').val();
-            var ph1 = $('#ph1').val();
-            var ph2 = $('#ph2').val();
-            var c1 = $('#c1').val();
-            var c2 = $('#c2').val();
-            var c3 = $('#c3').val();
-            var c4 = $('#c4').val();
+        const editInput = document.getElementById('eimage');
+        const editimgValidate = () => {
+            {
+                var filePath = editInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    editInput.value = '';
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+                    return false;
+                }
+                if (editInput.files[0].size > 500000) {
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+                    editInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg2').innerHTML = ""
+                return true;
 
-            if (email == "" || ph1 == "" || ph2 == "" || c1 == "" || c2 == "" || c3 == "" || c4 == "") {
+            }
+        }
+        editInput.onchange = editimgValidate;
+
+        const formValidate = () => {
+            var title = document.getElementById('title').value;
+            var date = document.getElementById('date').value;
+            var desc = document.getElementById('desc').value;
+            var image = document.getElementById('image').value;
+            if (title == "" || date == "" || desc == "") {
                 document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
                 return false;
-            }
-            else if(ph1.length != 10 || ph2.length != 10){
-                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid phone number</span></div>"     
+            } else if (image == "") {
+                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please upload an image</span></div>"
                 return false;
-            }
-            else if(email.indexOf('@') == -1 && email.indexOf('.') == -1 && email.indexOf(' ') == -1){
-                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid email</span></div>"     
-                return false;
-            }
-            else {
+            } else {
                 return true;
             }
         }
 
+        const editValidate = () => {
+            var title = document.getElementById('etitle').value;
+            var date = document.getElementById('edate').value;
+            var desc = document.getElementById('edesc').value;
+            var image = document.getElementById('eimage').value;
+            if (title == "" || date == "" || desc == "") {
+                document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
+                return false;
+            } else {
+                return true;
+            }
+        }
 
     </script>
+
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>

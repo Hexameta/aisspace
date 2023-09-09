@@ -1,3 +1,7 @@
+<?php
+include 'includes/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,17 +96,51 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link  " href="../admin/events.php">
+            <div
+              class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>document</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path class="color-background opacity-6"
+                          d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z">
+                        </path>
+                        <path class="color-background"
+                          d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
+                        </path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Events Feed</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link  " href="../admin/main-page.php">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <div
+              class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <g transform="translate(1716.000000, 291.000000)">
                       <g transform="translate(304.000000, 151.000000)">
-                        <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                        <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
-                        <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
+                        <polygon class="color-background opacity-6"
+                          points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667">
+                        </polygon>
+                        <path class="color-background opacity-6"
+                          d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z">
+                        </path>
+                        <path class="color-background"
+                          d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z">
+                        </path>
                       </g>
                     </g>
                   </g>
@@ -130,15 +168,19 @@
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>
+
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
+              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="">Logout</a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
               </a>
             </li>
           </ul>
@@ -149,75 +191,82 @@
     <div class="container-fluid py-4">
       <div class="col-12 mt-4">
         <div class="card mb-4">
-          <div class="d-flex bg-gradient-primary text justify-content-between border-radius-lg pt-3 p-3">
+          <div class="d-flex bg-gradient-primary text justify-content-between border-radius-lg pt-3 p-3 ">
             <h6 class="text-white font-weight-bolder text-uppercase pt-2 ps-3">Companies</h6>
           </div>
-          <div class="card-body p-3">
-            <div class="row">
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                <div class="card h-100 card-plain border">
-                  <div class="card-body d-flex flex-column justify-content-center text-center">
-                    <a type="button" title="Add a New Company" data-toggle="modal" data-target="#form">
-                      <i class="fa fa-plus text-secondary mb-3"></i>
-                      <h5 class=" text-secondary"> Add Company </h5>
-                    </a>
-                  </div>
+          <div class="card-body bg-gray-300 p-3">
+            <div class="row mb-xl-0 mb-4">
+              <div class="card bg-gray-100 card-blog card-plain col-md-2 col-sm-12 ms-md-2 mb-2">
+                <div class="card-body d-flex flex-column justify-content-center text-center">
+                  <a type="button" title="Add a New Company" data-toggle="modal" data-target="#form">
+                    <i class="fa fa-plus text-secondary mb-3"></i>
+                    <h5 class=" text-secondary"> Add Company </h5>
+                  </a>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                <div class="card card-blog card-plain">
+              <?php
+              $sql = "SELECT * FROM companies ORDER BY id DESC";
+              $result = mysqli_query($conn, $sql);
+              while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="card bg-gray-100 card-blog card-plain col-md-3 col-sm-12 ms-md-2 mb-2 p-md-2 p-1">
                   <div class="position-relative">
-                    <a class="d-block shadow-xl border-radius-xl">
-                      <img src="../../assets/images/companies/hexameta.png" alt="img-blur-shadow"
-                        class="img-fluid shadow border-radius-xl" data-toggle="modal" data-target="#view">
+                    <a class="d-block border-radius-xl">
+                      <img src="../../assets/images/companies/<?php echo $row["comp_logo"] ?>" alt="img-blur-shadow"
+                        class="rounded mx-auto d-block border-radius-xl" height="150px" width="100%"
+                        style="object-fit:contain">
                     </a>
                   </div>
                   <div class="card-body px-1 pb-0">
                     <div class="d-flex">
                       <i class="fas fa-link text-dark me-2" aria-hidden="true"></i>
-                      <a class="text-gradient text-dark mb-2 text-sm font-weight-bold" title="Go to https://hexameta.in" href="https://hexameta.in"
-                        target="_blank">https://www.hexameta.in</a>
+                      <a class="text-gradient text-dark mb-2 text-sm font-weight-bold"
+                        title="Go to <?php echo $row["comp_website"] ?>" href="<?php echo $row["comp_website"] ?>"
+                        target="_blank"><?php echo $row["comp_website"] ?></a>
                     </div>
-                      <h4 class="text-lg font-weight-bolder">
-                        Hexameta Technologies
-                      </h4>
-                    <p class="text-sm mb-4">
-                      Hexameta Technologies is a software development company that
-                      provides end-to-end development service for web and mobile
-                      development. We work on a wide range of technologies ranging from
-                      open source to proprietary and custom built solutions.
+                    <h4 class="text-lg font-weight-bolder">
+                      <?php echo $row["comp_name"] ?>
+                    </h4>
+                    <p class="text-sm mb-3">
+                      <?php echo $row["comp_details"] ?>
                     </p>
                     <div class="d-flex align-items-center justify-content-between">
-                      <button type="button" title="Delete this Company" class="btn btn-outline-primary btn-xs mb-0">Delete
+                      <a href="includes/delcomp.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["comp_logo"]; ?>">
+                        <button type="button" title="Delete this Company"
+                          class="btn btn-outline-primary btn-xs mb-0">Delete
+                          Company</button>
+                      </a>
+                      <buttone type="button" title="Edit this Company" class="btn btn-primary btn-xs mb-0"
+                        data-toggle="modal" onclick="getData(<?php echo $row['id']; ?>)" data-target="#edit">Edit
                         Company</button>
-                      <buttone type="button" title="Edit this Company" class="btn btn-primary btn-xs mb-0" data-toggle="modal"
-                        data-target="#edit">Edit Company</button>
                     </div>
                   </div>
                 </div>
-              </div>
+                <?php
+              }
+              ?>
             </div>
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
-                  Technologies</a>
-              </div>
+    </div>
+    <footer class="footer pt-3  ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              ©
+              <script>
+                document.write(new Date().getFullYear())
+              </script>,
+              made with <i class="fa fa-heart"></i> by
+              <a href="https://www.hexameta.in" class="font-weight-bold" target="_blank">Hexameta
+                Technologies</a>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </main>
 
   <!-- Add Company Modal -->
@@ -232,7 +281,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="../includes/addcomp.php" method="POST" enctype="multipart/form-data"
+        <form action="includes/addcomp.php" method="POST" enctype="multipart/form-data"
           onsubmit="return formValidate()">
 
           <div class="modal-body">
@@ -280,7 +329,7 @@
           </button>
         </div>
 
-        <form action="../includes/editcomp.php" method="POST" enctype="multipart/form-data"
+        <form action="includes/editcomp.php" method="POST" enctype="multipart/form-data"
           onsubmit="return editValidate()">
 
           <div class="modal-body">
@@ -306,13 +355,119 @@
               <input type="file" accept="image/png, image/jpeg," name="image" class="form-control" id="eimage">
             </div>
           </div>
-          <div class=" modal-footer border-top-0 d-flex justify-content-center">
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <script>
+    function getData(id) {
+      $.ajax({
+        url: "includes/getcomp.php",
+        type: "GET",
+        data: {
+          id: id
+        },
+        success: function (data) {
+          var data = JSON.parse(data);
+          $("#cid").val(data[0].id);
+          $("#ename").val(data[0].comp_name);
+          $("#ewebsite").val(data[0].comp_website);
+          $("#edesc").val(data[0].comp_details);
+          $("#imageName").val(data[0].comp_logo);
+        }
+      });
+    }
+
+    const fileInput = document.getElementById('image');
+
+    const imgValidate = () => {
+      {
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+          //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+          fileInput.value = '';
+          document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+          return false;
+        }
+        if (fileInput.files[0].size > 500000) {
+          document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+          fileInput.value = '';
+          return false;
+        }
+        document.getElementById('errormsg').innerHTML = ""
+      }
+    }
+    fileInput.onchange = imgValidate;
+
+    const editInput = document.getElementById('eimage');
+    const editimgValidate = () => {
+      {
+        var filePath = editInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+          //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+          editInput.value = '';
+          document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not image file</span></div>"
+          return false;
+        }
+        if (editInput.files[0].size > 500000) {
+          document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is too big!</span></div>"
+          editInput.value = '';
+          return false;
+        }
+        document.getElementById('errormsg2').innerHTML = ""
+        return true;
+
+      }
+    }
+    editInput.onchange = editimgValidate;
+
+    const formValidate = () => {
+      var name = document.getElementById('name').value;
+      var website = document.getElementById('website').value;
+      var desc = document.getElementById('desc').value;
+      var image = document.getElementById('image').value;
+      if (name == "" || website == "" || desc == "") {
+        document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
+        return false;
+      }
+      else if (website.indexOf("http://") == -1 && website.indexOf("https://") == -1) {
+        document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid website with http / https </span></div>"
+        return false;
+      }
+      else if (image == "") {
+        document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please upload an image</span></div>"
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+
+    const editValidate = () => {
+      var name = document.getElementById('ename').value;
+      var website = document.getElementById('ewebsite').value;
+      var desc = document.getElementById('edesc').value;
+      var image = document.getElementById('eimage').value;
+      if (name == "" || website == "" || desc == "") {
+        document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
+        return false;
+      }
+      else if (website.indexOf("http://") == -1 && website.indexOf("https://") == -1) {
+        document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please enter a valid website with http / https </span></div>"
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+
+  </script>
 
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>

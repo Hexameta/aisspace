@@ -156,6 +156,7 @@ include 'includes/conn.php'
                         <span class="nav-link-text ms-1">Main Page</span>
                     </a>
                 </li>
+                
             </ul>
         </div>
     </aside>
