@@ -1,7 +1,7 @@
 <?php
 include 'includes/conn.php';
 include 'includes/sessionvalidate.php';
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,7 @@ include 'includes/sessionvalidate.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.ico">
     <title>
         AISSPACE - Upload Page Admin
     </title>
@@ -34,9 +34,9 @@ include 'includes/sessionvalidate.php';
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html "
-                target="_blank">
-                <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+            <a class="navbar-brand m-0" href="#">
+                <img src="../../assets/images/logos/square-logo-black .png" class="navbar-brand-img h-100"
+                    alt="main_logo">
                 <span class="ms-1 font-weight-bold">AISSPACE</span>
             </a>
         </div>
@@ -206,7 +206,7 @@ include 'includes/sessionvalidate.php';
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
-                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="./includes/logout.php">Logout</a>
+                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" href="./includes/logout.php">Logout</a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -269,9 +269,8 @@ include 'includes/sessionvalidate.php';
                             foreach ($fileInfo as $fileData) {
                                 $fileDateFormatted = date("d F, Y", $fileData['date']);
                                 ?>
-                                <li
-                                    class="list-group-item border-0 ps-0 mb-2 border-radius-lg">
-                                    <div class="row d-flex align-items-center justify-content-between" >
+                                <li class="list-group-item border-0 ps-0 mb-2 border-radius-lg">
+                                    <div class="row d-flex align-items-center justify-content-between">
                                         <div class="col-12 col-md-8 col-lg-9">
                                             <h6 class="mb-1 text-dark font-weight-bold text-xs">
                                                 <?= $fileData['name'] ?>

@@ -51,10 +51,48 @@ while ($row = mysqli_fetch_assoc($result)) {
     <link rel="stylesheet" href="assets/css/slick.css">
     <!--====== Main Style ======-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Loading overlay styles */
+        #loading-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 50, 1.0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Loading animation styles */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.5s linear infinite;
+        }
+
+        /* Keyframe animation for the loading spinner */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 
 </head>
 
 <body>
+    <div id="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
     <div class="page-wrapper">
 
         <!-- main header -->
@@ -165,10 +203,10 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <?php echo date("Y", strtotime($row["n_date"])) ?>
                                 </span>
                                 <h4 class="card-title mb-0 text-nowrap">
-                                    <?php echo $row["n_title"] ?>
+                                    <?php echo substr($row["n_title"], 0, 20) . "..."; ?>
                                 </h4>
                                 <p class="text-muted" style="font-size:14px">
-                                    <?php echo substr($row["n_desc"], 0, 20) . "........."; ?>
+                                    <?php echo substr($row["n_desc"], 0, 35) . "..."; ?>
                                 </p>
 
                             </div>
@@ -243,13 +281,14 @@ while ($row = mysqli_fetch_assoc($result)) {
             if (mysqli_num_rows($result) > 0) {
                 ?>
                 <div class="text">
-                    <h2>OUR MEMBERS</h2>
+                    <h2 class="mb-1">OUR MEMBERS</h2>
                 </div>
                 <div class="logo-carousel-wrap style-two bg-white py-30 px-25 br-30">
                     <?php
                     while ($row = mysqli_fetch_array($result)) {
                         ?>
-                        <div class="logo-item" data-toggle="modal" data-target="#company" onclick='setModalCData("Company","assets/images/companies/<?php echo $row["comp_logo"] ?>","<?php echo $row["comp_name"] ?>","<?php echo $row["comp_website"] ?>","<?php echo $row["comp_details"] ?>")'>
+                        <div class="logo-item" style="cursor:pointer;" data-toggle="modal" data-target="#company"
+                            onclick='setModalCData("Company","assets/images/companies/<?php echo $row["comp_logo"] ?>","<?php echo $row["comp_name"] ?>","<?php echo $row["comp_website"] ?>","<?php echo $row["comp_details"] ?>")'>
                             <img src="assets/images/companies/<?php echo $row["comp_logo"] ?>" alt="Client Logo">
                         </div>
                         <?php
@@ -427,7 +466,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         <?php echo $row["n_title"] ?>
                                     </h4>
                                     <p>
-                                        <?php echo substr($row["n_desc"], 0, 15) . "........" ?>
+                                        <?php echo substr($row["n_desc"], 0, 35) . "..." ?>
                                     </p>
                                 </div>
                             </div>
@@ -435,7 +474,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <?php
                     }
                     ?>
-                    <a href="#">View all</a>
+                    <a hidden href="#">View all</a>
                 </div>
                 <?php
             }
@@ -455,12 +494,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <div class="col-lg-4 col-sm-6 pl-40">
                         <div class="footer-widget about-widget">
                             <div class="footer-logo mb-15">
-                                <a href="index.html"><img src="assets/images/logos/logo.png" alt="Logo"></a>
+                                <a href="index.php"><img src="assets/images/logos/logo.png" alt="Logo"></a>
                             </div>
-                            <!-- <div class="text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                </div> -->
                             <div class="footer-widget contact-widget mr-30 rmr-0 pl-40">
                                 <ul class="list-style-two">
                                     <li><i class="fas fa-map-marker-alt"></i> AIS Space, Al-Ameen College, Edathala,
@@ -563,13 +598,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="modal-body">
                     <div class="card">
                         <div class="row">
-                            <div class="col-md-6 col-sm-12 align-items-center justify-content-center c-img-modal">
-                            <a id="modal-cURL" href="https://hexameta.in" target="_blank">
-                                <img class="card-img h-100" id="modal-cimg" src="" alt="Vans">
-                                <p id="modal-cwebsite"></p>
-                            </a>
+                            <div class="col-12 align-items-center justify-content-center c-img-modal">
+                                <a id="modal-cURL" href="https://hexameta.in" target="_blank">
+                                    <img class="card-img w-auto" id="modal-cimg" src="" alt="Vans">
+                                    <p id="modal-cwebsite"></p>
+                                </a>
                             </div>
-                            <div class="card-body col-md-6 col-sm-12 ">
+                            <div class="card-body col-12 ">
                                 <h4 class="card-title" id="modal-ctitle"></h4>
                                 <p class="card-text text-justify" id="modal-cdesc"></p>
                             </div>
@@ -584,6 +619,11 @@ while ($row = mysqli_fetch_assoc($result)) {
     <button class="scroll-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></button>
 
     <script>
+        window.addEventListener("load", function () {
+            // Hide the loading overlay when the page is fully loaded
+            document.getElementById("loading-overlay").style.display = "none";
+        });
+
         function setModalData(heading, img, title, date, desc) {
             let objectDate = new Date(date);
             let day = objectDate.getDate();

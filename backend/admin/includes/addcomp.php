@@ -1,8 +1,8 @@
 <?php
 include 'conn.php';
-$name = $mysqli -> real_escape_string ($_POST['name']);
-$website = $mysqli -> real_escape_string ($_POST['website']);
-$description = $mysqli -> real_escape_string ($_POST['description']);
+$name = $conn -> real_escape_string ($_POST['name']);
+$website = $conn -> real_escape_string ($_POST['website']);
+$description = $conn -> real_escape_string ($_POST['description']);
 
 $query = "INSERT INTO companies (comp_name, comp_website, comp_details) VALUES ('$name', '$website', '$description')";
 

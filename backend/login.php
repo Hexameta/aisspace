@@ -2,13 +2,13 @@
 <html lang="en">
 <?php
 session_start();
-if(isset($_SESSION["uname"])){
-   header("Location:./admin");
+if (isset($_SESSION["uname"])) {
+  header("Location:./admin/companies.php");
 }
 $error = "";
 if (isset($_POST["submit"])) {
   include 'admin/includes/conn.php';
-  
+
   if ($_POST["uname"] != "" && $_POST["pass"] != "") {
     $username = mysqli_real_escape_string($conn, $_POST["uname"]);
     $password = md5(mysqli_real_escape_string($conn, $_POST["pass"]));
@@ -28,8 +28,7 @@ if (isset($_POST["submit"])) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.ico">
   <title>
     AISSPACE - Admin Login
   </title>
@@ -57,15 +56,19 @@ if (isset($_POST["submit"])) {
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-0">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Welcome Admin</h3>
-                  <p class="mb-0">Enter your email and password to sign in</p>
+                  <div class=" d-flex justify-content-center">
+                    <img height="80px" width="auto" src="../assets/images/logos/logo-black.png"
+                      alt="Logo">
+                  </div>
+                  <h3 class="font-weight-bolder text-info text-center text-gradient">Welcome Admin</h3>
+                  <p class="text-center mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <?php if($error != "") {?>
-                  <div class="alert alert-danger" role="alert">
-                  <?php echo $error;?>
-                  </div>
-                  <?php }?>
+                  <?php if ($error != "") { ?>
+                    <div class="alert alert-danger text-white" role="alert">
+                      <?php echo $error; ?>
+                    </div>
+                  <?php } ?>
                   <form role="form" method="POST">
                     <label>Email</label>
                     <div class="mb-3">

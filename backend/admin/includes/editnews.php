@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
-$title = $mysqli -> real_escape_string ($_POST['title']);
-$description = $mysqli -> real_escape_string ($_POST['description']);
+$title = $conn -> real_escape_string ($_POST['title']);
+$description = $conn -> real_escape_string ($_POST['description']);
 $date = $_POST['date'];
 $imageName = $_POST['imageName'];
 $unique_file_name = "";
