@@ -245,7 +245,7 @@ include 'includes/sessionvalidate.php';
                         <ul class="list-group">
                             <?php
                             $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/backend/uploads';
-                            $copyLink = "/backend/uploads/";
+                            $copyLink = "backend/uploads";
                             $files = scandir($uploadDirectory);
 
                             // Create an array to store file information
