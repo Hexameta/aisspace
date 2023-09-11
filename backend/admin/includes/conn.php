@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db="aisspace";
+$username = "aisspace_admin";
+$password = "SiaSpace@2320";
+$db="aisspace_db";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$db);
