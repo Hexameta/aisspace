@@ -245,6 +245,7 @@ include 'includes/sessionvalidate.php';
                         <ul class="list-group">
                             <?php
                             $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/backend/uploads';
+                            $copyLink = "/backend/uploads/";
                             $files = scandir($uploadDirectory);
 
                             // Create an array to store file information
@@ -281,7 +282,7 @@ include 'includes/sessionvalidate.php';
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-3 text-xs ">
                                             <button class="btn btn-link text-success text-xs mb-0 px-0"
-                                                onclick="copyFileLink('<?= $uploadDirectory ?>/<?= $fileData['name'] ?>')">
+                                                onclick="copyFileLink('<?= $copyLink ?>/<?= $fileData['name'] ?>')">
                                                 <i class="fas fa-copy text-sm me-1"></i> Copy Link
                                             </button>
                                             <button class="btn btn-link text-danger text-xs mb-0 px-0 ms-4"
