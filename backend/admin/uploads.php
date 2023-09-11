@@ -244,7 +244,7 @@ include 'includes/sessionvalidate.php';
                     <div class="card-body p-3 pb-0">
                         <ul class="list-group">
                             <?php
-                            $uploadDirectory = "../uploads";
+                            $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/backend/uploads';
                             $files = scandir($uploadDirectory);
 
                             // Create an array to store file information
