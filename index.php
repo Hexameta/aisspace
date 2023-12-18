@@ -132,12 +132,15 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation onepage clearfix">
-                                        <li><a href="#home">Home</a></li>
+                                        <!-- <li><a href="#home">Home</a></li> -->
                                         <li><a href="#about">about</a></li>
-                                        <li><a href="#companies">companies</a></li>
+                                        <!-- <li><a href="#companies">companies</a></li> -->
                                         <li><a href="#objectives">objectives</a></li>
                                         <li><a href="#news">news</a></li>
                                         <li><a href="#contact">contact</a></li>
+                                        <li><a href="./iic">IIC</a></li>
+                                        <li><a href="./iedc">IEDC</a></li>
+                                        <li><a href="./msme">MSME</a></li>
                                     </ul>
                                 </div>
 
@@ -146,6 +149,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>
                 </div>
                 <!--End Header Upper-->
+            </div>
         </header>
 
 
@@ -502,12 +506,18 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         Kochi, Kerala - 683 561</li>
                                     <li><i class="fas fa-phone-alt"></i> <a
                                             href="tel:+91<?php echo $techarray['ph1'] ?>">
-                                            +91-<?php echo $techarray["ph1"] ?></a></li>
+                                            +91-
+                                            <?php echo $techarray["ph1"] ?>
+                                        </a></li>
                                     <li><i class="fas fa-phone-alt"></i> <a
                                             href="tel:+91<?php echo $techarray['ph2'] ?>">
-                                            +91-<?php echo $techarray['ph2'] ?></a></li>
+                                            +91-
+                                            <?php echo $techarray['ph2'] ?>
+                                        </a></li>
                                     <li><i class="fas fa-envelope"></i> <a class="text-lowercase"
-                                            href="mailto:<?php echo $techarray['email'] ?>"><?php echo $techarray['email'] ?></a></li>
+                                            href="mailto:<?php echo $techarray['email'] ?>">
+                                            <?php echo $techarray['email'] ?>
+                                        </a></li>
                                 </ul>
                             </div>
                         </div>

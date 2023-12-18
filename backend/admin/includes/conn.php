@@ -1,7 +1,12 @@
 <?php
+// $servername = "localhost";
+// $username = "aisspace_admin";
+// $password = "SiaSpace@2320";
+// $db="aisspace_db";
+
 $servername = "localhost";
-$username = "aisspace_admin";
-$password = "SiaSpace@2320";
+$username = "root";
+$password = "";
 $db="aisspace_db";
 
 // Create connection
