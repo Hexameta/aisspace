@@ -84,6 +84,19 @@ while ($row = mysqli_fetch_assoc($result)) {
                 transform: rotate(360deg);
             }
         }
+
+        .hover:hover {
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hover{
+                color: black;
+            }
+            .hover:hover {
+                color: black;
+            }
+        }
     </style>
 
 </head>
@@ -138,9 +151,18 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         <li><a href="#objectives">objectives</a></li>
                                         <li><a href="#news">news</a></li>
                                         <li><a href="#contact">contact</a></li>
-                                        <li><a href="./iic">IIC</a></li>
+                                        <!-- <li><a href="./iic">IIC</a></li>
                                         <li><a href="./iedc">IEDC</a></li>
-                                        <li><a href="./msme">MSME</a></li>
+                                        <li><a href="./msme">MSME</a></li> -->
+                                        <li><button class="btn hover" type="button" onclick="window.location='./iic'">
+                                                IIC
+                                            </button></li>
+                                        <li><button class="btn hover" type="button" onclick="window.location='./iedc'">
+                                                IEDC
+                                            </button></li>
+                                        <li><button class="btn hover" type="button" onclick="window.location='./msme'">
+                                                MSME
+                                            </button></li>
                                     </ul>
                                 </div>
 
