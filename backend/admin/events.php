@@ -270,7 +270,7 @@ include 'includes/sessionvalidate.php';
                                         </p>
                                         <div class="row align-items-center justify-content-between">
                                             <a class="col-6 m-0"
-                                                href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&report=<?php echo $row["n_reports"]?>&ne=2">
+                                                href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&report=<?php echo $row["n_reports"] ?>&ne=2">
                                                 <button type="button" title="Delete this Event"
                                                     class="btn btn-outline-primary w-100 m-0 btn-sm mb-0">Delete</button>
                                             </a>
@@ -556,6 +556,10 @@ include 'includes/sessionvalidate.php';
                 return false;
             } else if (image == "") {
                 document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please upload an image</span></div>"
+                return false;
+            }
+            else if (report == "") {
+                document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please upload a report</span></div>"
                 return false;
             } else {
                 return true;
