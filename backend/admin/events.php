@@ -270,7 +270,7 @@ include 'includes/sessionvalidate.php';
                                         </p>
                                         <div class="row align-items-center justify-content-between">
                                             <a class="col-6 m-0"
-                                                href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&ne=2">
+                                                href="includes/delnews.php?id=<?php echo $row["id"]; ?>&image=<?php echo $row["n_image"]; ?>&report=<?php echo $row["n_reports"]?>&ne=2">
                                                 <button type="button" title="Delete this Event"
                                                     class="btn btn-outline-primary w-100 m-0 btn-sm mb-0">Delete</button>
                                             </a>
@@ -366,6 +366,10 @@ include 'includes/sessionvalidate.php';
                             <input type="file" accept="image/png, image/jpeg," name="image" class="form-control"
                                 id="image">
                         </div>
+                        <div class="form-group">
+                            <label for="file2">Add Report</label>
+                            <input type="file" accept="application/pdf" name="report" class="form-control" id="report">
+                        </div>
                     </div>
                     <div class=" modal-footer border-top-0 d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -398,6 +402,7 @@ include 'includes/sessionvalidate.php';
                         <input type="hidden" name="id" id="nid">
                         <input type="hidden" name="ne" value="2">
                         <input type="hidden" name="imageName" id="imageName">
+                        <input type="hidden" name="reportName" id="reportName">
                         <div class="form-group">
                             <label for="text1">Title</label>
                             <input type="text" class="form-control px-2" id="etitle" name="title"
@@ -417,6 +422,10 @@ include 'includes/sessionvalidate.php';
                             <label for="file1">Add Poster</label>
                             <input type="file" accept="image/png, image/jpeg," name="image" class="form-control"
                                 id="eimage">
+                        </div>
+                        <div class="form-group">
+                            <label for="file2">Add Report</label>
+                            <input type="file" accept="application/pdf" name="report" class="form-control" id="ereport">
                         </div>
                     </div>
                     <div class=" modal-footer border-top-0 d-flex justify-content-center">
@@ -442,11 +451,13 @@ include 'includes/sessionvalidate.php';
                     $("#edate").val(data[0].n_date);
                     $("#edesc").val(data[0].n_desc);
                     $("#imageName").val(data[0].n_image);
+                    $("#reportName").val(data[0].n_reports);
                 }
             });
         }
 
         const fileInput = document.getElementById('image');
+        const reportInput = document.getElementById('report');
 
         const imgValidate = () => {
             {
@@ -468,7 +479,29 @@ include 'includes/sessionvalidate.php';
         }
         fileInput.onchange = imgValidate;
 
+        const reportValidate = () => {
+            {
+                var filePath = reportInput.value;
+                var allowedExtensions = /(\.pdf)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    reportInput.value = '';
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not pdf file</span></div>"
+                    return false;
+                }
+                if (reportInput.files[0].size > 5000000) {
+                    document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is greater than 5MB!</span></div>"
+                    reportInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg').innerHTML = ""
+            }
+        }
+        reportInput.onchange = reportValidate;
+
         const editInput = document.getElementById('eimage');
+        const editreportInput = document.getElementById('ereport');
+
         const editimgValidate = () => {
             {
                 var filePath = editInput.value;
@@ -491,11 +524,33 @@ include 'includes/sessionvalidate.php';
         }
         editInput.onchange = editimgValidate;
 
+        const editreportValidate = () => {
+            {
+                var filePath = editreportInput.value;
+                var allowedExtensions = /(\.pdf)$/i;
+                if (!allowedExtensions.exec(filePath)) {
+                    //alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+                    editreportInput.value = '';
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>It is not pdf file</span></div>"
+                    return false;
+                }
+                if (editreportInput.files[0].size > 5000000) {
+                    document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>File is greater than 5MB!</span></div>"
+                    editreportInput.value = '';
+                    return false;
+                }
+                document.getElementById('errormsg2').innerHTML = ""
+                return true;
+            }
+        }
+        editreportInput.onchange = editreportValidate;
+
         const formValidate = () => {
             var title = document.getElementById('title').value;
             var date = document.getElementById('date').value;
             var desc = document.getElementById('desc').value;
             var image = document.getElementById('image').value;
+            var report = document.getElementById('report').value;
             if (title == "" || date == "" || desc == "") {
                 document.getElementById('errormsg').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
                 return false;
@@ -512,6 +567,7 @@ include 'includes/sessionvalidate.php';
             var date = document.getElementById('edate').value;
             var desc = document.getElementById('edesc').value;
             var image = document.getElementById('eimage').value;
+            var report = document.getElementById('ereport').value;
             if (title == "" || date == "" || desc == "") {
                 document.getElementById('errormsg2').innerHTML = "<div class='alert alert-danger text-white' role='alert'><span class='text-sm'>Please fill all the fields</span></div>"
                 return false;
