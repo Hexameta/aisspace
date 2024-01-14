@@ -135,38 +135,46 @@ include '../backend/admin/includes/conn.php';
                             $year1 = substr($row['n_date'], 0, 4);
                             ?>
                             <div class="col-md-4 grid-item <?php echo $year1 ?>">
-                                <div role="button" class="card cursor-pointer shadow-sm p-1 m-1 br-10 rounded-top" data-toggle="modal"
-                                    style="width:300px"
-                                    onclick='setModalData("Event","../assets/images/news/<?php echo $row["n_image"] ?>","<?php echo $row["n_title"] ?>","<?php echo $row["n_date"] ?>","<?php echo $row["n_desc"] ?>","<?php echo $row["n_reports"] ?>")'
+                                <?php
+                                $img = json_encode("../assets/images/news/" . $row["n_image"]);
+                                $title = json_encode($row["n_title"]);
+                                $date = json_encode($row["n_date"]);
+                                $desc = json_encode($row["n_desc"]);
+                                $reports = json_encode($row["n_reports"]);
+                                ?>
+                                <div role="button" class="card cursor-pointer shadow-sm p-1 m-1 br-10 rounded-top"
+                                    data-toggle="modal" style="width:300px"
+                                    onclick='setModalData("Event", <?php echo htmlspecialchars($img, ENT_QUOTES, 'UTF-8'); ?>, <?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?>, <?php echo htmlspecialchars($date, ENT_QUOTES, 'UTF-8'); ?>, <?php echo htmlspecialchars($desc, ENT_QUOTES, 'UTF-8'); ?>, <?php echo htmlspecialchars($reports, ENT_QUOTES, 'UTF-8'); ?>)'
                                     data-target="#edit">
-                                    <img src="../assets/images/news/<?php echo $row["n_image"] ?>" class="card-img-top"
-                                        alt="..." height="120px" width="300px" style="object-fit: cover;">
-                                    <div class="card-body mb-0 text-left">
-                                        <span class=" badge rounded-pill bg-primary text-light mb-2 p-2">
-                                            <i class="fas fa-calendar-alt text-light me-2" aria-hidden="true"></i>
-                                            <?php echo date("d", strtotime($row["n_date"])) ?><sup>
-                                                <?php echo dateSup(date("d", strtotime($row["n_date"]))) ?>
-                                            </sup>
-                                            <?php echo date("M", strtotime($row["n_date"])) ?>
-                                            <?php echo date("Y", strtotime($row["n_date"])) ?>
-                                        </span>
-                                        <h4 class="card-title mb-0 text-nowrap">
-                                            <?php echo substr($row["n_title"], 0, 20) . "..."; ?>
-                                        </h4>
-                                        <p class="text-muted" style="font-size:14px">
-                                            <?php echo substr($row["n_desc"], 0, 35) . "..."; ?>
-                                        </p>
+                                    
+                                        <img src="../assets/images/news/<?php echo $row["n_image"] ?>" class="card-img-top"
+                                            alt="..." height="120px" width="300px" style="object-fit: cover;">
+                                        <div class="card-body mb-0 text-left">
+                                            <span class=" badge rounded-pill bg-primary text-light mb-2 p-2">
+                                                <i class="fas fa-calendar-alt text-light me-2" aria-hidden="true"></i>
+                                                <?php echo date("d", strtotime($row["n_date"])) ?><sup>
+                                                    <?php echo dateSup(date("d", strtotime($row["n_date"]))) ?>
+                                                </sup>
+                                                <?php echo date("M", strtotime($row["n_date"])) ?>
+                                                <?php echo date("Y", strtotime($row["n_date"])) ?>
+                                            </span>
+                                            <h4 class="card-title mb-0 text-nowrap">
+                                                <?php echo substr($row["n_title"], 0, 20) . "..."; ?>
+                                            </h4>
+                                            <p class="text-muted" style="font-size:14px">
+                                                <?php echo substr($row["n_desc"], 0, 35) . "..."; ?>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
+                                <?php
                         }
                         ?>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
     </section>
     <footer class="main-footer footer-two bgs-cover text-white pt-0 rpt-0" id="contact"
         style="background-image: url(../assets/images/footer/footer-bg-map.png)">
@@ -216,6 +224,7 @@ include '../backend/admin/includes/conn.php';
         </div>
     </div>
     <script>
+
         function setModalData(heading, img, title, date, desc, report) {
             let objectDate = new Date(date);
             let day = objectDate.getDate();
@@ -223,7 +232,7 @@ include '../backend/admin/includes/conn.php';
             let year = objectDate.getFullYear();
             day = day < 10 ? '0' + day : day;
             month = month < 10 ? '0' + (month + 1) : (month + 1);
-            console.log(report);
+            // console.log(report);
 
             $("#modal-heading").html(heading);
             $("#modal-title").html(title);
@@ -231,6 +240,7 @@ include '../backend/admin/includes/conn.php';
             $("#modal-date").html(day + "-" + (month) + "-" + year);
             $("#modal-desc").html(desc);
             $("#modal-report").attr("href", "../assets/reports/" + report);
+            // console.log(heading + img + title + date + desc + report);
         }
     </script>
     <!--====== Jquery ======-->

@@ -485,7 +485,7 @@ include 'includes/sessionvalidate.php';
                     $('#c2').val(data.c2);
                     $('#c3').val(data.c3);
                     $('#c4').val(data.c4);
-                    console.log(data);
+                    // console.log(data);
                 }
             });
         }
