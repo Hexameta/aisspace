@@ -150,7 +150,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <li><a href="#about">about</a></li>
                                     <!-- <li><a href="#companies">companies</a></li> -->
                                     <li><a href="#objectives">objectives</a></li>
-                                    <li><a href="#news">news</a></li>
+                                    <!-- <li><a href="#news">news</a></li> -->
                                     <li><a href="#contact">contact</a></li>
                                     <!-- <li><a href="./iic">IIC</a></li>
                                         <li><a href="./iedc">IEDC</a></li>
@@ -163,6 +163,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         </button></li>
                                     <li><button class="btn hover" type="button" onclick="window.location='./msme'">
                                             MSME
+                                        </button></li>
+                                        <li><button class="btn hover" type="button" onclick="window.location='https://drive.google.com/drive/folders/1kBltfQm8fOyOa59m-LxOuiDojWfVXPGz?usp=drive_link'">
+                                            Policies
                                         </button></li>
                                 </ul>
                             </div>
@@ -186,8 +189,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <h1 class="wow fadeInUp delay-0-4s mt-20">AIS SPACE</h1>
                         <span class="sub-title d-block wow fadeInUp delay-0-2s text-uppercase">Ameenian Incubation
                             and Startup Initiative Foundation</span>
-                        <div class="hero-btns mt-35 wow fadeInUp delay-0-6s scroll-to-target" data-target="#contact">
-                            <a href="#contact" class="theme-btn mr-25">meet with us</a>
+                        <div class="hero-btns mt-35 wow fadeInUp delay-0-6s" >
+                            <a href="https://docs.google.com/forms/d/1xHAfx2aq7_EXoz8tqkt-K2NKJQWFyNTZ7qeHmbxpQ7U/viewform?edit_requested=true&pli=1" class="theme-btn mr-25">Join with us</a>
                         </div>
                     </div>
                 </div>
